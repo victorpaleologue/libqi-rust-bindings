@@ -18,8 +18,8 @@ fn main() {
 
     println!("cargo:rerun-if-changed=src/*.*pp");
     println!("cargo:rerun-if-changed=include/*");
-    println!("cargo:rerun-if-changed=src/lib.rs");
-    cxx_build::bridge("src/lib.rs")
+    println!("cargo:rerun-if-changed=src/bridge.rs");
+    cxx_build::bridge("src/bridge.rs")
         .file("src/qiri.cpp")
         .flag_if_supported("-std=c++14")
         .include(libqi_dir + "/include")
